@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Pizza",
+        "price": 500,
+        "image": "images/menu-pizza.jpg",
+        "description": "Made with Italian Sauce, Chicken."
+    },
+    {
+        "name": "Smoky Burger",
+        "price": 200,
+        "image": "images/menu-burger.jpg",
+        "description": "Made with Italian Sauce, Chicken, and organic vegetables."
+    },
+    {
+        "name": "Dosa",
+        "price": 100,
+        "image": "images/dosa.jpeg",
+        "description": "Crispy and delicious South Indian Dosa."
+    },
+    {
+        "name": "Panner Tikka",
+        "price": 150,
+        "image": "images/panner.jpg",
+        "description": "Crispy and delicious South Indian Dosa."
+    },
+    {
+        "name": "Taco",
+        "price": 250,
+        "image": "images/taco.jpg",
+        "description": "Crispy and delicious South Indian Dosa."
+    },
+    {
+        "name": "Pasta",
+        "price": 180,
+        "image": "images/pasta.jpg",
+        "description": "Crispy and delicious South Indian Dosa."
+    },
+    {
+        "name": "Noodles",
+        "price": 200,
+        "image": "images/n.jpg",
+        "description": "Crispy and delicious South Indian Dosa."
+    },
+    {
+        "name": "Mild Chicken",
+        "price": 250,
+        "image": "images/c.jpg",
+        "description": "Crispy and delicious South Indian Dosa."
+    }
+]

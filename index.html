@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/1.jpg" alt="Restaurant Logo" class="img-responsive"></a>
+            </div>
+            <div class="menu text-right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="category-foods.html">Foods</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-link">Cart
+                            <span id="cart-count" class="cart-badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- Food Search Section -->
+    <section class="food-search text-center">
+        <div class="container">
+            <input type="search" id="search-input" placeholder="Search for Food..." onkeyup="searchFood()">
+        </div>
+    </section>
+    <section class="food-menu">
+        <div class="container">
+            <h2 class="text-center">Food Menu</h2>
+            <div id="food-container"></div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- CAtegories Section Starts Here -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="text-center">Explore Foods</h2>
+
+            <div class="card-container">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/pizza.jpg" alt="Pizza">
+                            <h3>Pizza</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Delicious cheesy pizza with fresh ingredients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/burger.jpg" alt="Burger">
+                            <h3>Burger</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Juicy burgers with crispy buns and rich flavors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/momo.jpg" alt="Momo">
+                            <h3>Momo</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Steamed dumplings filled with spicy stuffing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div class="card-container">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/n.jpg" alt="Pizza">
+                            <h3>Noodles</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Stir-fried with fresh vegetables and savory sauces for a delightful taste.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/taco.jpg" alt="Burger">
+                            <h3>Tacos</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Crispy shells filled with seasoned meat, fresh veggies, and zesty toppings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/panner.jpg" alt="Momo">
+                            <h3>panner</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Soft cottage cheese cooked in rich, aromatic Indian spices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div class="card-container">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/pasta.jpg" alt="Pizza">
+                            <h3>Pasta</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Creamy or spicy Italian-style pasta loaded with flavorful sauces.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/dosa.jpeg" alt="Burger">
+                            <h3>Dosa</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Crispy South Indian crepe served with chutney and flavorful sambar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/c.jpg" alt="Momo">
+                            <h3>Mild Chicke</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Tender chicken cooked with mild spices for a rich and savory experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Categories Section Ends Here -->
+    <!-- Social Media Links -->
+    <section class="social text-center">
+        <div class="container">
+            <ul>
+                <li><a href="https://instagram.com/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer text-center">
+        <div class="container">
+            <p>All rights reserved. Designed By <a href="#">Jaymin Kania</a></p>
+        </div>
+    </section>
+    <script>
+        async function loadFoodItems() {
+            try {
+                let response = await fetch("food.json");
+                let foods = await response.json();
+                let foodContainer = document.getElementById("food-container");
+
+                foodContainer.innerHTML = ""; // Clear existing content
+
+                foods.forEach(food => {
+                    let foodHTML = `
+                        <div class="food-menu-box" data-name="${food.name.toLowerCase()}">
+                            <div class="food-menu-img">
+                                <img src="${food.image}" alt="${food.name}" class="img-responsive img-curve">
+                            </div>
+                            <div class="food-menu-desc">
+                                <h4>${food.name}</h4>
+                                <p class="food-price">₹${food.price}</p>
+                                <p class="food-detail">${food.description}</p>
+                                <br>
+                                <a onclick="addToCart('${food.name}', ${food.price}, '${food.image}')" class="btn btn-primary">Add to Cart</a> &nbsp;
+                                <a onclick="selectFood('${food.name}', ${food.price}, '${food.image}')" class="btn btn-primary">Order Now</a>
+                            </div>
+                        </div>
+                    `;
+                    foodContainer.innerHTML += foodHTML;
+                });
+            } catch (error) {
+                console.error("Error loading food items:", error);
+            }
+        }
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            document.getElementById("cart-count").innerText = cart.length;
+        }
+        function searchFood() {
+            let query = document.getElementById("search-input").value.toLowerCase();
+            let items = document.querySelectorAll(".food-menu-box");
+            items.forEach(item => {
+                let name = item.getAttribute("data-name").toLowerCase();
+                item.style.display = name.includes(query) ? "block" : "none";
+            });
+        }
+        window.selectFood = function (name, price, image) {
+            localStorage.setItem("foodName", name);
+            localStorage.setItem("foodPrice", price);
+            localStorage.setItem("foodImage", image);
+            window.location.href = "order.html";
+        };
+        function flipCard(card) {
+            let cardInner = card.querySelector(".flip-card-inner");
+            cardInner.classList.toggle("flipped");
+        }
+        window.onload = function () {
+            updateCartCount();
+            loadFoodItems(); // Load food items dynamically
+        };
+
+    </script>
+
+</body>
+
+</html>
