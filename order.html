@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- <script>
+      
+        document.getElementById("res").innerHTML = localStorage.getItem("pass");
+        // document.getElementById("price").innerHTML = "$10.00"; // Set the price value here
+       
+    </script> -->
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="images/1.jpg" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="category-foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="cart.html" class="cart-link">
+                            Cart
+                            <span id="cart-count" class="cart-badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+    <!-- fOOD sEARCH Section Starts Here -->
+    <section class="food-search">
+        <div class="container">
+
+            <h2 class="text-center text-white" style="color: brown;">Fill this form to confirm your order.</h2>
+
+            <form action="#" class="order" onsubmit="return confirmOrder(event)">
+                <fieldset>
+                    <legend>Selected Food</legend>
+
+                    <div class="food-menu-img">
+                        <img id="food-img" alt="Food Image" class="img-responsive img-curve">
+                    </div>
+
+                    <div class="food-menu-desc">
+                        <p id="food-name"></p>
+                        <p id="food-price"></p>
+
+                        <div class="order-label">Quantity</div>
+                        <input type="number" id="food-qty" name="qty" class="input-responsive" value="1" min="1"
+                            required onchange="updateTotalPrice()">
+
+                        <p id="total-price"></p>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Delivery Details</legend>
+                    <div class="order-label">Full Name</div>
+                    <input type="text" name="full-name" placeholder="E.g.Full name" class="input-responsive" required>
+
+                    <div class="order-label">Phone Number</div>
+                    <input type="tel" name="contact" placeholder="E.g. 9843xxxxxx" class="input-responsive" required>
+
+                    <div class="order-label">Email</div>
+                    <input type="email" name="email" placeholder="E.g. hi@gmail.com" class="input-responsive" required>
+
+                    <div class="order-label">Address</div>
+                    <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive"
+                        required></textarea>
+
+                    <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
+                </fieldset>
+
+            </form>
+
+        </div>
+    </section>
+    <!-- fOOD sEARCH Section Ends Here -->
+
+    <!-- social Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+
+                <li>
+                    <a href="https://instagram.com/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- social Section Ends Here -->
+
+    <!-- footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">Jaymin Kania</a></p>
+        </div>
+    </section>
+    <!-- footer Section Ends Here -->
+    <script>
+        // Retrieve food details from localStorage
+        let foodName = localStorage.getItem("foodName") || "Unknown Item";
+        let foodPrice = parseFloat(localStorage.getItem("foodPrice")) || 0;
+        let foodImage = localStorage.getItem("foodImage") || "default-image.jpg";
+
+        document.getElementById("food-name").innerText = "Item: " + foodName;
+        document.getElementById("food-price").innerText = "Price: ₹" + foodPrice.toFixed(2);
+        document.getElementById("food-img").src = foodImage;
+
+        function updateTotalPrice() {
+            let quantity = parseInt(document.getElementById("food-qty").value);
+            if (isNaN(quantity) || quantity < 1) {
+                quantity = 1; // Default to 1 if invalid
+                document.getElementById("food-qty").value = 1;
+            }
+
+            let totalPrice = foodPrice * quantity;
+            document.getElementById("total-price").innerText = "Total Price: ₹" + totalPrice.toFixed(2);
+        }
+        function confirmOrder(event) {
+            event.preventDefault(); // Prevents actual form submission
+
+            let name = document.querySelector("input[name='full-name']").value;
+            let contact = document.querySelector("input[name='contact']").value;
+            let email = document.querySelector("input[name='email']").value;
+            let address = document.querySelector("textarea[name='address']").value;
+            let quantity = document.getElementById("food-qty").value;
+            let totalPrice = document.getElementById("total-price").innerText;
+
+            if (!name || !contact || !email || !address) {
+                alert("Please fill in all the required details before confirming your order.");
+                return false; // Prevents submission if fields are empty
+            }
+
+            let message = `✅ Order Confirmed!\n\n Name: ${name}\nContact: ${contact}\n✉ Email: ${email}\n Address: ${address}\n\n🍽 Quantity: ${quantity}\n ${totalPrice}`;
+
+            alert(message); // Display order summary in an alert
+
+            // Clear the form fields after confirming the order
+            document.querySelector("input[name='full-name']").value = "";
+            document.querySelector("input[name='contact']").value = "";
+            document.querySelector("input[name='email']").value = "";
+            document.querySelector("textarea[name='address']").value = "";
+            document.getElementById("food-qty").value = 1;
+            updateTotalPrice(); // Reset total price based on quantity 1
+
+            return true; // Allow form submission (Remove if using AJAX)
+        }
+        // Initialize total price on page load
+
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            document.getElementById("cart-count").innerText = cart.length;
+        }
+        updateTotalPrice();
+        window.onload = function () {
+            updateCartCount();
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .food-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .food-card:hover {
+            transform: scale(1.05);
+        }
+
+        .food-img {
+            width: 100%;
+            height: 200px;
+            /* Adjust height as needed */
+            object-fit: cover;
+        }
+
+        .food-title {
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="images/1.jpg" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="category-foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="cart.html" class="cart-link">
+                            Cart
+                            <span id="cart-count" class="cart-badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+
+
+
+    <!-- CAtegories Section Starts Here -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="text-center">Explore Foods</h2>
+
+            <div class="card-container">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/pizza.jpg" alt="Pizza">
+                            <h3>Pizza</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Delicious cheesy pizza with fresh ingredients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/burger.jpg" alt="Burger">
+                            <h3>Burger</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Juicy burgers with crispy buns and rich flavors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/momo.jpg" alt="Momo">
+                            <h3>Momo</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Steamed dumplings filled with spicy stuffing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div class="card-container">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/n.jpg" alt="Pizza">
+                            <h3>Noodles</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Stir-fried with fresh vegetables and savory sauces for a delightful taste.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/taco.jpg" alt="Burger">
+                            <h3>Tacos</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Crispy shells filled with seasoned meat, fresh veggies, and zesty toppings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/panner.jpg" alt="Momo">
+                            <h3>Panner</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Soft cottage cheese cooked in rich, aromatic Indian spices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div class="card-container">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/pasta.jpg" alt="Pizza">
+                            <h3>Pasta</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Creamy or spicy Italian-style pasta loaded with flavorful sauces.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/dosa.jpeg" alt="Burger">
+                            <h3>Dosa</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Crispy South Indian crepe served with chutney and flavorful sambar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/c.jpg" alt="Momo">
+                            <h3>Mild Chicke</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Tender chicken cooked with mild spices for a rich and savory experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </section>
+    <!-- Categories Section Ends Here -->
+    <!-- social Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+
+                <li>
+                    <a href="https://instagram.com/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- social Section Ends Here -->
+
+    <!-- footer Section Starts Here -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">Jaymin Kania</a></p>
+
+        </div>
+    </section>
+    <!-- footer Section Ends Here -->
+    <script>
+        function flipCard(card) {
+            let cardInner = card.querySelector(".flip-card-inner");
+            cardInner.classList.toggle("flipped");
+        }
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            document.getElementById("cart-count").innerText = cart.length;
+        }
+        window.onload = function () {
+            updateCartCount();
+        };
+    </script>
+
+</body>
+
+</html>
